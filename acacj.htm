@@ -1,64 +1,18 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Roleta Russa</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            margin-top: 50px;
-        }
-        button {
-            padding: 10px 20px;
-            font-size: 16px;
-            margin: 10px;
-            cursor: pointer;
-        }
-        .result {
-            margin-top: 20px;
-            font-size: 20px;
-            font-weight: bold;
-        }
-        #scary-image {
-            display: none;
-            margin-top: 20px;
-            max-width: 100%;
-            height: auto;
-        }
-    </style>
-</head>
-<body>
-    <h1>Roleta Russa</h1>
-    <p>Clique em "Girar o Tambor" para preparar a roleta e depois em "Puxar o Gatilho".</p>
-    <button id="spin">Girar o Tambor</button>
-    <button id="shoot" disabled>Puxar o Gatilho</button>
-    <div class="result" id="result"></div>
-    <img id="scary-image" src="isaac.jpeg" alt="Imagem de Terror">
+<center><h1>Cadastro de Fornecedor</h1></center>
+<form action="#" method="post">
+    <center><label for="nome">Nome do Fornecedor:</label><br></center>
+    <center><input type="text" id="nome" name="nome" required><br><br>
 
-    <script>
-        let bulletPosition = -1;
-        let currentPosition = -1;
+    <center><label for="cnpj">CNPJ:</label><br></center>
+    <center><input type="text" id="cnpj" name="cnpj" required><br><br></center>
 
-        document.getElementById('spin').addEventListener('click', () => {
-            bulletPosition = Math.floor(Math.random() * 6); // Posição aleatória entre 0 e 5
-            currentPosition = 0;
-            document.getElementById('result').textContent = "Tambor girado! Boa sorte...";
-            document.getElementById('shoot').disabled = false;
-            document.getElementById('scary-image').style.display = "none"; // Oculta a imagem
-        });
+    <center><label for="email">E-mail:</label><br></center>
+    <center><input type="email" id="email" name="email" required><br><br></center>
 
-        document.getElementById('shoot').addEventListener('click', () => {
-            if (currentPosition === bulletPosition) {
-                document.getElementById('result').textContent = "Bang! Você perdeu!";
-                document.getElementById('shoot').disabled = true;
-                document.getElementById('scary-image').style.display = "block"; // Mostra a imagem
-            } else {
-                document.getElementById('result').textContent = "Clique! Você sobreviveu!";
-                currentPosition = (currentPosition + 1) % 6; // Avança para a próxima posição
-            }
-        });
-    </script>
-</body>
-</html>
+    <center><label for="telefone">Telefone:</label><br></center>
+    <center><input type="tel" id="telefone" name="telefone" required><br><br></center>
+
+    <center><label for="endereco">Endereço:</label><br></center>
+    <center><input type="text" id="endereco" name="endereco" required><br><br></center>
+
+    <center><button type="submit">Cadastrar</button>
